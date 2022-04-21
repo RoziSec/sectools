@@ -8,9 +8,11 @@ import socket
 import paramiko
 import itertools
 import queue
+import os
 
 from prettytable import PrettyTable
 
+root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 table = PrettyTable()
 
 table.field_names = ['\033[0;32mHost\033[0m', '\033[0;32mPort\033[0m', '\033[0;32mUsername\033[0m',
@@ -52,8 +54,8 @@ class ssh_brute:
 
     @classmethod
     def get_word_list(cls):
-        with open('F:/sectools/dicts/dic_username_ssh.txt') as username:
-            with open('F:/sectools/dicts/dic_password_ssh.txt') as password:
+        with open(root_path + '/dicts/dic_username_ssh.txt') as username:
+            with open(root_path + '/dicts/dic_password_ssh.txt') as password:
                 return itertools.product(username, password)
 
     @classmethod
@@ -71,9 +73,3 @@ class ssh_brute:
             if ssh:
                 ssh.close()
         return ret
-
-
-if __name__ == '__main__':
-    host = '192.168.30.151'
-    port = '22'
-    ssh_brute.brute(host, port)
