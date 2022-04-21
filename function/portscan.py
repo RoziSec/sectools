@@ -5,6 +5,8 @@
 # @Time : 2022/4/19 23:43
 # @Software: PyCharm
 import sys
+import os
+import platform
 
 from main import begin
 from prettytable import PrettyTable
@@ -22,16 +24,21 @@ table.add_row(['0', '\033[0;33mGo Back\033[0m', '\033[0;31m\033[0m'])
 class Portscan:
     @staticmethod
     def scan():
+        os_platform = platform.platform()
+        if 'Windows' in os_platform:
+            os.system('cls')
+        elif 'Linux' in os_platform:
+            os.system('clear')
         print(table)
         while True:
-            github_choices = input('\033[0;32mNorah C.IV\033[0m > ')
-            if github_choices == '1':
+            portscan_choices = input('\033[0;32mNorah C.IV\033[0m > ')
+            if portscan_choices == '1':
                 Nmap().scan('sim')
-            elif github_choices == '2':
+            elif portscan_choices == '2':
                 Nmap().scan('oft')
-            elif github_choices == '3':
+            elif portscan_choices == '3':
                 Nmap().scan('all')
-            elif github_choices == '0':
+            elif portscan_choices == '0':
                 begin()
             else:
                 sys.exit(0)

@@ -5,6 +5,8 @@
 # @Time : 2022/4/19 23:51
 # @Software: PyCharm
 import sys
+import os
+import platform
 
 from prettytable import PrettyTable
 from main import begin
@@ -29,6 +31,11 @@ table.add_row(['0', '\033[0;33mGo Back\033[0m', '\033[0;31m\033[0m'])
 class WeakPassword:
     @staticmethod
     def scan():
+        os_platform = platform.platform()
+        if 'Windows' in os_platform:
+            os.system('cls')
+        elif 'Linux' in os_platform:
+            os.system('clear')
         print(table)
         print('\033[0;33m[*] Choose The Brute Type\033[0m')
         while True:

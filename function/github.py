@@ -5,6 +5,8 @@
 # @Time : 2022/4/19 23:53
 # @Software: PyCharm
 import sys
+import os
+import platform
 
 from main import begin
 from prettytable import PrettyTable
@@ -23,19 +25,16 @@ table.add_row(['0', '\033[0;33mGo Back\033[0m'])
 class GitHub:
     @staticmethod
     def scan():
+        os_platform = platform.platform()
+        if 'Windows' in os_platform:
+            os.system('cls')
+        elif 'Linux' in os_platform:
+            os.system('clear')
         print(table)
         while True:
             github_choices = input('\033[0;32mNorah C.IV\033[0m > ')
             if github_choices == '1':
                 print(1)
-            elif github_choices == '2':
-                print(2)
-            elif github_choices == '3':
-                print(3)
-            elif github_choices == '4':
-                print(4)
-            elif github_choices == '5':
-                print(5)
             elif github_choices == '0':
                 begin()
             else:
