@@ -49,8 +49,10 @@ class ssh_brute:
             if not result_queue.empty():
                 true_username, true_passwords = result_queue.get()
                 table.add_row([hosts, ports, true_username, true_passwords])
-                print(table)
-                print("\033[0;31m[*] Enter '0' to Go Back or Other Type of Brute\033[0m")
+            else:
+                table.add_row([hosts, ports, '', ''])
+            print(table)
+            print("\033[0;31m[*] Enter '0' to Go Back or Other Type of Brute\033[0m")
 
     @classmethod
     def get_word_list(cls):
