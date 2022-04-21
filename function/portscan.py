@@ -13,10 +13,10 @@ from port.scan import Nmap
 table = PrettyTable()
 
 table.field_names = ['\033[0;32mOptions\033[0m', '\033[0;32mDescription\033[0m', '\033[0;32mNotes\033[0m']
-table.add_row(['1', '\033[0;33mSimplify\033[0m', '\033[0;33m精简端口扫描\033[0m'])
-table.add_row(['2', '\033[0;33mGeneral\033[0m', '\033[0;33m常规端口扫描\033[0m'])
-table.add_row(['3', '\033[0;33mAll\033[0m', '\033[0;33m全端口扫描\033[0m'])
-table.add_row(['0', '\033[0;33mGo Back\033[0m', '\033[0;33m\033[0m'])
+table.add_row(['1', '\033[0;33mSimplify\033[0m', '\033[0;31m精简端口扫描\033[0m'])
+table.add_row(['2', '\033[0;33mGeneral\033[0m', '\033[0;31m常规端口扫描\033[0m'])
+table.add_row(['3', '\033[0;33mAll\033[0m', '\033[0;31m全端口扫描\033[0m'])
+table.add_row(['0', '\033[0;33mGo Back\033[0m', '\033[0;31m\033[0m'])
 
 
 class Portscan:
