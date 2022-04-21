@@ -5,11 +5,10 @@
 # @Time : 2022/4/19 23:51
 # @Software: PyCharm
 import sys
-import os
-import platform
 
 from prettytable import PrettyTable
 from main import begin
+from weakpass.brute_ssh import ssh_brute
 
 table = PrettyTable()
 
@@ -31,17 +30,14 @@ table.add_row(['0', '\033[0;33mGo Back\033[0m', '\033[0;31m\033[0m'])
 class WeakPassword:
     @staticmethod
     def scan():
-        os_platform = platform.platform()
-        if 'Windows' in os_platform:
-            os.system('cls')
-        elif 'Linux' in os_platform:
-            os.system('clear')
         print(table)
         print('\033[0;33m[*] Choose The Brute Type\033[0m')
         while True:
             brute_choice = input('\033[0;32mNorah C.IV\033[0m > ')
-            if brute_choice == '1':
-                print('ssh brute')
+            if brute_choice == '9':
+                host = input('\033[0;33m[+] Please enter host\033[0m:')
+                port = input('\033[0;33m[+] Please enter port\033[0m:')
+                ssh_brute.brute(host, port)
             elif brute_choice == '2':
                 print('ftp brute')
             elif brute_choice == '0':
