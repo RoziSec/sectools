@@ -8,7 +8,6 @@
 │   └── start.py
 ├── function
 │   ├── github.py
-│   ├── information.py
 │   ├── passwdscan.py
 │   ├── portscan.py
 │   └── vulscan.py
@@ -33,17 +32,15 @@
 ## 🔥使用姿势
 `python main.py`
 
-![start.png](img/start.png)
+![start.jpg](img/start.jpg)
 
 ## 🔥Function
-### 信息收集
-
 ### 漏洞扫描
 
 ### 端口扫描
-![portscan.png](img/portscan.png)
+![portscan.jpg](img/portscan.jpg)
 ### 弱口令攻击
-![weakpass.png](img/weakpass.png)
+![weakpass.jpg](img/weakpass.jpg)
 
 ### Github监控
-![github.png](img/github.png)
+![github.jpg](img/github.jpg)

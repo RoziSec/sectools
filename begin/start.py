@@ -6,7 +6,6 @@
 # @Software: PyCharm
 import sys
 
-from function.information import Information
 from function.vulscan import Vulnerability
 from function.portscan import Portscan
 from function.passwdscan import WeakPassword
@@ -20,14 +19,12 @@ class start:
             try:
                 choose = input('\033[0;32mNorah C.IV\033[0m > ')
                 if choose == '1':
-                    Information.scan()
-                elif choose == '2':
                     Vulnerability.scan()
-                elif choose == '3':
+                elif choose == '2':
                     Portscan.scan()
-                elif choose == '4':
+                elif choose == '3':
                     WeakPassword.scan()
-                elif choose == '5':
+                elif choose == '4':
                     GitHub.scan()
                 elif choose == '0':
                     print('[-] Exited By User')
