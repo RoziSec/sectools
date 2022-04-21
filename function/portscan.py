@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @File : portscan.py
+# @File : port.py
 # @Author : Norah C.IV
 # @Time : 2022/4/19 23:43
 # @Software: PyCharm
@@ -8,6 +8,7 @@ import sys
 
 from main import begin
 from prettytable import PrettyTable
+from port.scan import Nmap
 
 table = PrettyTable()
 
@@ -25,11 +26,11 @@ class Portscan:
         while True:
             github_choices = input('\033[0;32mNorah C.IV\033[0m > ')
             if github_choices == '1':
-                print('精简端口')
+                Nmap().scan('sim')
             elif github_choices == '2':
-                print('常规端口')
+                Nmap().scan('oft')
             elif github_choices == '3':
-                print('全端口')
+                Nmap().scan('all')
             elif github_choices == '0':
                 begin()
             else:
