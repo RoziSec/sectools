@@ -11,7 +11,7 @@
 ### ② 漏洞扫描
 
 ### ③ 端口扫描
-
+![portscan.png](img/portscan.png)
 ### ④ 弱口令攻击
 ![weakpass.png](img/weakpass.png)
 
