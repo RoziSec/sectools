@@ -6,11 +6,13 @@
 # @Software: PyCharm
 import sys
 import os
+import platform
 
 from begin.get_file import find_file
 from main import begin
 from prettytable import PrettyTable
 
+os_platform = platform.platform()
 table = PrettyTable()
 
 table.field_names = ['\033[0;32mOptions\033[0m', '\033[0;32mPoc File\033[0m']
@@ -18,7 +20,11 @@ root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 f = find_file(root_path + "/pocsuite3/pocs", filter_strs=[".pyc", "__init__"])
 i = 1
 for items in f:
-    file_name = items.replace(root_path + "\pocsuite3\pocs\\", '')
+    file_name = ''
+    if 'Windows' in os_platform:
+        file_name = items.replace(root_path + "\pocsuite3\pocs\\", '')
+    elif 'Linux' in os_platform:
+        file_name = items.replace(root_path + "/pocsuite3/pocs/", '')
     table.add_row([i, file_name])
     i += 1
 
