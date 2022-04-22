@@ -21,17 +21,23 @@ class start:
                 choose = input('\033[0;32mNorah C.IV\033[0m > ')
                 if choose == '1':
                     Vulnerability.scan()
+
                 elif choose == '2':
                     Portscan.scan()
+
                 elif choose == '3':
                     WeakPassword.scan()
+
                 elif choose == '4':
                     GitHub.scan()
+
                 elif choose == '0':
                     print('[-] Exited By User')
                     sys.exit(0)
+
                 else:
                     print('[-] Error Param!')
+
             except KeyboardInterrupt:
                 print('')
                 exit_command = input('[+] Enter Y/n to exit(Default is Y)：')

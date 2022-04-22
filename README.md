@@ -279,15 +279,17 @@
 ## 🔥使用姿势
 `python main.py`
 
-![start.jpg](img/start.jpg)
+![start.png](img/start.png)
 
 ## 🔥Function
 ### 漏洞扫描
+![vulscan.png](img/vulscan.png)
 
 ### 端口扫描
-![portscan.jpg](img/portscan.jpg)
+![portscan.png](img/portscan.png)
+
 ### 弱口令攻击
-![weakpass.jpg](img/weakpass.jpg)
+![weakpass.png](img/weakpass.png)
 
 ### Github爬虫
-![github.jpg](img/github.jpg)
+![github.png](img/github.png)

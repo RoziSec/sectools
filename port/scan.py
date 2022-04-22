@@ -6,6 +6,13 @@
 # @Software: PyCharm
 import nmap
 
+from prettytable import PrettyTable
+
+table = PrettyTable()
+
+table.field_names = ['\033[0;32mIP\033[0m', '\033[0;32mPort\033[0m', '\033[0;32mProtocol\033[0m',
+                     '\033[0;32mStatus\033[0m']
+
 
 class Nmap:
     def __init__(self):
@@ -24,9 +31,13 @@ class Nmap:
 
         start = nm.scan(hosts=target, arguments=' -T4 -A -v', ports=ports)
         for host, result in start['scan'].items():
-            print(host)
-            print(result)
+            if result['status']['state'] == 'up':
+                ip = host
+                for port in result['tcp']:
+                    ports = str(port)
+                    status = result['tcp'][port]['state']
+                    protocol = result['tcp'][port]['name']
 
-
-if __name__ == '__main__':
-    Nmap().scan('110.42.246.138', 'all')
+                    table.add_row([ip, ports, protocol, status])
+        print(table)
+        table.clear_rows()

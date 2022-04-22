@@ -5,15 +5,22 @@
 # @Time : 2022/4/19 23:46
 # @Software: PyCharm
 import sys
+import os
 
+from begin.get_file import find_file
 from main import begin
 from prettytable import PrettyTable
 
 table = PrettyTable()
 
-table.field_names = ['\033[0;32mOptions\033[0m', '\033[0;32mDescription\033[0m']
-table.add_row(['1', '\033[0;33mSingle\033[0m'])
-table.add_row(['2', '\033[0;33mAll\033[0m'])
+table.field_names = ['\033[0;32mOptions\033[0m', '\033[0;32mPoc File\033[0m']
+root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+f = find_file(root_path + "/pocsuite3/pocs", filter_strs=[".pyc", "__init__"])
+i = 1
+for items in f:
+    file_name = items.replace(root_path + "\pocsuite3\pocs\\", '')
+    table.add_row([i, file_name])
+    i += 1
 
 
 class Vulnerability:
