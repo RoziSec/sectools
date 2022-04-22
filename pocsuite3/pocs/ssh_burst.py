@@ -74,9 +74,9 @@ class DemoPOC(POCBase):
 
 
 def get_word_list():
-    common_username = ('ssh', 'test', 'root', 'guest', 'admin', 'daemon', 'user')
-    with open(paths.WEAK_PASS) as f:
-        return itertools.product(common_username, f)
+    with open(paths.SSH_USER) as username:
+        with open(paths.SSH_PASS) as password:
+            return itertools.product(username, password)
 
 
 def port_check(host, port=22):

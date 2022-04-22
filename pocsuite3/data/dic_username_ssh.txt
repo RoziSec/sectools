@@ -1,4 +1,3 @@
-kali
 root
 test
 oracle
