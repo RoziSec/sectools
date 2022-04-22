@@ -21,9 +21,12 @@ table.add_row(['0', '\033[0;33mExit The Program\033[0m', '\033[0;31m退出程序
 
 
 def begin():
-    print(table)
-    print('\033[0;33m[*] Choose The Attack Module\033[0m')
-    start.start().loop()
+    try:
+        print(table)
+        print('\033[0;33m[*] Choose The Attack Module\033[0m')
+        start.start().loop()
+    except KeyboardInterrupt:
+        print('Ctrl-C')
 
 
 if __name__ == '__main__':

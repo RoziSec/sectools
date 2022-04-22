@@ -4,9 +4,13 @@
 # @Author : Norah C.IV
 # @Time : 2022/4/19 23:51
 # @Software: PyCharm
+import os
+import sys
+
 from prettytable import PrettyTable
 from main import begin
-from weakpass.brute_ssh import ssh_brute
+
+root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 table = PrettyTable()
 
@@ -31,64 +35,71 @@ class WeakPassword:
         print(table)
         print('\033[0;33m[*] Choose The Brute Type\033[0m')
         while True:
-            brute_choice = input('\033[0;32mNorah C.IV\033[0m > ')
-            if brute_choice == '1':
-                host = input('\033[0;33m[+] Please enter host\033[0m：')
-                port = input('\033[0;33m[+] Please enter port\033[0m：')
-                print('FTP brute')
+            try:
+                brute_choice = input('\033[0;32mNorah C.IV\033[0m > ')
+                if brute_choice == '1':
+                    host = input('\033[0;33m[+] Please enter host\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
+                    print('FTP brute')
 
-            elif brute_choice == '2':
-                host = input('\033[0;33m[+] Please enter host\033[0m：')
-                port = input('\033[0;33m[+] Please enter port\033[0m：')
-                print('Ldap brute')
+                elif brute_choice == '2':
+                    host = input('\033[0;33m[+] Please enter host\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
+                    print('Ldap brute')
 
-            elif brute_choice == '3':
-                host = input('\033[0;33m[+] Please enter host\033[0m：')
-                port = input('\033[0;33m[+] Please enter port\033[0m：')
-                print('MemCache brute')
+                elif brute_choice == '3':
+                    host = input('\033[0;33m[+] Please enter host\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
+                    print('MemCache brute')
 
-            elif brute_choice == '4':
-                host = input('\033[0;33m[+] Please enter host\033[0m：')
-                port = input('\033[0;33m[+] Please enter port\033[0m：')
-                print('MongoDB brute')
+                elif brute_choice == '4':
+                    host = input('\033[0;33m[+] Please enter host\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
+                    print('MongoDB brute')
 
-            elif brute_choice == '5':
-                host = input('\033[0;33m[+] Please enter host\033[0m：')
-                port = input('\033[0;33m[+] Please enter port\033[0m：')
-                print('Mssql brute')
+                elif brute_choice == '5':
+                    host = input('\033[0;33m[+] Please enter host\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
+                    print('Mssql brute')
 
-            elif brute_choice == '6':
-                host = input('\033[0;33m[+] Please enter host\033[0m：')
-                port = input('\033[0;33m[+] Please enter port\033[0m：')
-                print('Mysql brute')
+                elif brute_choice == '6':
+                    host = input('\033[0;33m[+] Please enter host\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
+                    print('Mysql brute')
 
-            elif brute_choice == '7':
-                host = input('\033[0;33m[+] Please enter host\033[0m：')
-                port = input('\033[0;33m[+] Please enter port\033[0m：')
-                print('PostgreSQL brute')
+                elif brute_choice == '7':
+                    host = input('\033[0;33m[+] Please enter host\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
+                    print('PostgreSQL brute')
 
-            elif brute_choice == '8':
-                host = input('\033[0;33m[+] Please enter host\033[0m：')
-                port = input('\033[0;33m[+] Please enter port\033[0m：')
-                print('Redis brute')
+                elif brute_choice == '8':
+                    host = input('\033[0;33m[+] Please enter host\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
+                    print('Redis brute')
 
-            elif brute_choice == '9':
-                host = input('\033[0;33m[+] Please enter host\033[0m：')
-                port = input('\033[0;33m[+] Please enter port\033[0m：')
-                ssh_brute.brute(host, port)
+                elif brute_choice == '9':
+                    host = input('\033[0;33m[+] Please enter host\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
+                    os.system("python " + root_path + "/pocsuite3/cli.py -u " + host + " -r " + root_path +
+                              "/pocsuite3/pocs/ssh_burst.py --verify")
 
-            elif brute_choice == '10':
-                host = input('\033[0;33m[+] Please enter host\033[0m：')
-                port = input('\033[0;33m[+] Please enter port\033[0m：')
-                print('Telnet brute')
+                elif brute_choice == '10':
+                    host = input('\033[0;33m[+] Please enter host\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
+                    print('Telnet brute')
 
-            elif brute_choice == '11':
-                host = input('\033[0;33m[+] Please enter host\033[0m：')
-                port = input('\033[0;33m[+] Please enter port\033[0m：')
-                print('VNC brute')
+                elif brute_choice == '11':
+                    host = input('\033[0;33m[+] Please enter host\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
+                    print('VNC brute')
 
-            elif brute_choice == '0':
-                begin()
+                elif brute_choice == '0':
+                    begin()
 
-            else:
-                print('\033[0;31m[-] Error: Invalid Brute Type!Please Retype It!\033[0m')
+                else:
+                    print('\033[0;31m[-] Error: Invalid Brute Type!Please Retype It!\033[0m')
+
+            except KeyboardInterrupt:
+                print('')
+                print('[-] Exited By User')
+                sys.exit(0)

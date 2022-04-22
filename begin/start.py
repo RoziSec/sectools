@@ -10,6 +10,7 @@ from function.vulscan import Vulnerability
 from function.portscan import Portscan
 from function.passwdscan import WeakPassword
 from function.github import GitHub
+from main import begin
 
 
 class start:
@@ -33,5 +34,8 @@ class start:
                     print('[-] Error Param!')
             except KeyboardInterrupt:
                 print('')
-                print('[-] Exited By Ctrl-C')
-                sys.exit(0)
+                exit_command = input('[+] Enter Y/n to exit(Default is Y)：')
+                if exit_command == '' or exit_command.lower() == 'y':
+                    sys.exit(0)
+                elif exit_command.lower() == 'n':
+                    begin()

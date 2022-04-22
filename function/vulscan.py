@@ -21,10 +21,18 @@ class Vulnerability:
     def scan():
         print(table)
         while True:
-            vuln_choices = input('\033[0;32mNorah C.IV\033[0m > ')
-            if vuln_choices == '1':
-                print(1)
-            elif vuln_choices == '0':
-                begin()
-            else:
+            try:
+                vuln_choices = input('\033[0;32mNorah C.IV\033[0m > ')
+                if vuln_choices == '1':
+                    print(1)
+
+                elif vuln_choices == '0':
+                    begin()
+
+                else:
+                    print('\033[0;31m[-] Error: Invalid Brute Type!Please Retype It!\033[0m')
+
+            except KeyboardInterrupt:
+                print('')
+                print('[-] Exited By User')
                 sys.exit(0)
