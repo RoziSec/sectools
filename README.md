@@ -6,47 +6,8 @@
 ```
 .
 ├── begin
+│   ├── get_file.py
 │   └── start.py
-├── dicts
-│   ├── dic_password_ftp.txt
-│   ├── dic_password_imap_ssl.txt
-│   ├── dic_password_imap.txt
-│   ├── dic_password_memcached.txt
-│   ├── dic_password_mongodb.txt
-│   ├── dic_password_mysql.txt
-│   ├── dic_password_oracle.txt
-│   ├── dic_password_pop3.txt
-│   ├── dic_password_postgresql.txt
-│   ├── dic_password_rdp.txt
-│   ├── dic_password_redis.txt
-│   ├── dic_password_smb.txt
-│   ├── dic_password_smtp.txt
-│   ├── dic_password_sqlserver.txt
-│   ├── dic_password_ssh.txt
-│   ├── dic_password_svn.txt
-│   ├── dic_password_telnet.txt
-│   ├── dic_password_tomcat.txt
-│   ├── dic_password_vnc.txt
-│   ├── dic_password_weblogic.txt
-│   ├── dic_username_ftp.txt
-│   ├── dic_username_imap.txt
-│   ├── dic_username_memcached.txt
-│   ├── dic_username_mongodb.txt
-│   ├── dic_username_mysql.txt
-│   ├── dic_username_oracle.txt
-│   ├── dic_username_pop3.txt
-│   ├── dic_username_postgresql.txt
-│   ├── dic_username_rdp.txt
-│   ├── dic_username_redis.txt
-│   ├── dic_username_smb.txt
-│   ├── dic_username_smtp.txt
-│   ├── dic_username_sqlserver.txt
-│   ├── dic_username_ssh.txt
-│   ├── dic_username_svn.txt
-│   ├── dic_username_telnet.txt
-│   ├── dic_username_tomcat.txt
-│   ├── dic_username_vnc.txt
-│   └── dic_username_weblogic.txt
 ├── function
 │   ├── github.py
 │   ├── passwdscan.py
@@ -85,8 +46,8 @@
 │   ├── objects
 │   │   ├── info
 │   │   └── pack
-│   │       ├── pack-319a668a3914d1a590b20e91f7c27a898cb0bafb.idx
-│   │       └── pack-319a668a3914d1a590b20e91f7c27a898cb0bafb.pack
+│   │       ├── pack-2fc453f04f4e3ebafbd7cead074831277a6d9d9f.idx
+│   │       └── pack-2fc453f04f4e3ebafbd7cead074831277a6d9d9f.pack
 │   ├── packed-refs
 │   └── refs
 │       ├── heads
@@ -98,10 +59,11 @@
 ├── github
 │   └── monitor.py
 ├── img
-│   ├── github.jpg
-│   ├── portscan.jpg
-│   ├── start.jpg
-│   └── weakpass.jpg
+│   ├── github.png
+│   ├── portscan.png
+│   ├── start.png
+│   ├── vulscan.png
+│   └── weakpass.png
 ├── LICENSE
 ├── main.py
 ├── pocsuite3
@@ -110,7 +72,45 @@
 │   ├── cli.py
 │   ├── console.py
 │   ├── data
-│   │   └── password-top100.txt
+│   │   ├── dic_password_ftp.txt
+│   │   ├── dic_password_imap_ssl.txt
+│   │   ├── dic_password_imap.txt
+│   │   ├── dic_password_memcached.txt
+│   │   ├── dic_password_mongodb.txt
+│   │   ├── dic_password_mysql.txt
+│   │   ├── dic_password_oracle.txt
+│   │   ├── dic_password_pop3.txt
+│   │   ├── dic_password_postgresql.txt
+│   │   ├── dic_password_rdp.txt
+│   │   ├── dic_password_redis.txt
+│   │   ├── dic_password_smb.txt
+│   │   ├── dic_password_smtp.txt
+│   │   ├── dic_password_sqlserver.txt
+│   │   ├── dic_password_ssh.txt
+│   │   ├── dic_password_svn.txt
+│   │   ├── dic_password_telnet.txt
+│   │   ├── dic_password_tomcat.txt
+│   │   ├── dic_password_vnc.txt
+│   │   ├── dic_password_weblogic.txt
+│   │   ├── dic_username_ftp.txt
+│   │   ├── dic_username_imap.txt
+│   │   ├── dic_username_memcached.txt
+│   │   ├── dic_username_mongodb.txt
+│   │   ├── dic_username_mysql.txt
+│   │   ├── dic_username_oracle.txt
+│   │   ├── dic_username_pop3.txt
+│   │   ├── dic_username_postgresql.txt
+│   │   ├── dic_username_rdp.txt
+│   │   ├── dic_username_redis.txt
+│   │   ├── dic_username_smb.txt
+│   │   ├── dic_username_smtp.txt
+│   │   ├── dic_username_sqlserver.txt
+│   │   ├── dic_username_ssh.txt
+│   │   ├── dic_username_svn.txt
+│   │   ├── dic_username_telnet.txt
+│   │   ├── dic_username_tomcat.txt
+│   │   ├── dic_username_vnc.txt
+│   │   └── dic_username_weblogic.txt
 │   ├── __init__.py
 │   ├── lib
 │   │   ├── controller
@@ -274,7 +274,7 @@
 │   └── scan.py
 ├── README.md
 └── requirements.txt
-  ```
+```
 
 ## 🔥使用姿势
 `python main.py`
