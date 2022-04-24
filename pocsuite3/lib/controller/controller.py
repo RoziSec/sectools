@@ -25,7 +25,7 @@ def runtime_check():
 def start():
     runtime_check()
     tasks_count = kb.task_queue.qsize()
-    info_msg = "pocsusite got a total of {0} tasks".format(tasks_count)
+    info_msg = "pocsuite got a total of {0} tasks".format(tasks_count)
     logger.info(info_msg)
     logger.debug("pocsuite will open {} threads".format(conf.threads))
 
@@ -39,7 +39,7 @@ def start():
         info_msg = "connect back ip: {0}    port: {1}".format(
             desensitization(conf.connect_back_host) if conf.ppt else conf.connect_back_host, conf.connect_back_port)
         logger.info(info_msg)
-        info_msg = "watting for shell connect to pocsuite"
+        info_msg = "waiting for shell connect to pocsuite"
         logger.info(info_msg)
         if conf.console_mode:
             handle_listener_connection_for_console()
