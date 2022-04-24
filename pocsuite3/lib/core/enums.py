@@ -135,6 +135,7 @@ class POC_CATEGORY:
     PROTOCOL.SSH = "Ssh"
     PROTOCOL.TELENT = "Telent"
     PROTOCOL.REDIS = "Redis"
+    PROTOCOL.MYSQL = "Mysql"
 
 
 class OPTION_TYPE:

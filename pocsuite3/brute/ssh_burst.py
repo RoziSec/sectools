@@ -105,7 +105,7 @@ def ssh_login(host, port, username, password):
     return ret
 
 
-def task_init(host, port, task_queue, reqult_queue):
+def task_init(host, port, task_queue, result_queue):
     for username, password in get_word_list():
         task_queue.put((host, port, username.strip(), password.strip()))
 

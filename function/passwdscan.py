@@ -40,7 +40,7 @@ class WeakPassword:
                 if brute_choice == '1':
                     host = input('\033[0;33m[+] Please enter host\033[0m：')
                     port = input('\033[0;33m[+] Please enter port\033[0m：')
-                    os.system("python " + root_path + "/pocsuite3/cli.py -u " + host + " -r " + root_path +
+                    os.system("python " + root_path + "/pocsuite3/cli.py -u " + host + ':' + port + " -r " + root_path +
                               "/pocsuite3/brute/ftp_burst.py --verify")
 
                 elif brute_choice == '2':
@@ -66,7 +66,8 @@ class WeakPassword:
                 elif brute_choice == '6':
                     host = input('\033[0;33m[+] Please enter host\033[0m：')
                     port = input('\033[0;33m[+] Please enter port\033[0m：')
-                    print('Mysql brute')
+                    os.system("python " + root_path + "/pocsuite3/cli.py -u " + host + ':' + port + " -r " + root_path +
+                              "/pocsuite3/brute/mysql_burst.py --verify")
 
                 elif brute_choice == '7':
                     host = input('\033[0;33m[+] Please enter host\033[0m：')
@@ -81,13 +82,13 @@ class WeakPassword:
                 elif brute_choice == '9':
                     host = input('\033[0;33m[+] Please enter host\033[0m：')
                     port = input('\033[0;33m[+] Please enter port\033[0m：')
-                    os.system("python " + root_path + "/pocsuite3/cli.py -u " + host + " -r " + root_path +
+                    os.system("python " + root_path + "/pocsuite3/cli.py -u " + host + ':' + port + " -r " + root_path +
                               "/pocsuite3/brute/ssh_burst.py --verify")
 
                 elif brute_choice == '10':
                     host = input('\033[0;33m[+] Please enter host\033[0m：')
                     port = input('\033[0;33m[+] Please enter port\033[0m：')
-                    os.system("python " + root_path + "/pocsuite3/cli.py -u " + host + " -r " + root_path +
+                    os.system("python " + root_path + "/pocsuite3/cli.py -u " + host + ':' + port + " -r " + root_path +
                               "/pocsuite3/brute/telnet_burst.py --verify")
 
                 elif brute_choice == '11':
