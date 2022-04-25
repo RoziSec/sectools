@@ -110,8 +110,8 @@ def task_init(host, port, task_queue, result_queue):
 def task_thread(task_queue, result_queue):
     while not task_queue.empty():
         host, port, username, password = task_queue.get()
-        logger.info('try burst {}:{} use username:{} password:{}'.format(
-            host, port, username, password))
+        # logger.info('try burst {}:{} use username:{} password:{}'.format(
+        #     host, port, username, password))
         if mssql_login(host, port, username, password):
             with task_queue.mutex:
                 task_queue.queue.clear()
