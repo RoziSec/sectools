@@ -61,7 +61,8 @@ class WeakPassword:
                 elif brute_choice == '5':
                     host = input('\033[0;33m[+] Please enter host\033[0m：')
                     port = input('\033[0;33m[+] Please enter port\033[0m：')
-                    print('Mssql brute')
+                    os.system("python " + root_path + "/pocsuite3/cli.py -u " + host + ':' + port + " -r " + root_path +
+                              "/pocsuite3/brute/mssql_burst.py --verify")
 
                 elif brute_choice == '6':
                     host = input('\033[0;33m[+] Please enter host\033[0m：')

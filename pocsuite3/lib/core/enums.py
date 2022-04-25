@@ -136,6 +136,7 @@ class POC_CATEGORY:
     PROTOCOL.TELENT = "Telent"
     PROTOCOL.REDIS = "Redis"
     PROTOCOL.MYSQL = "Mysql"
+    PROTOCOL.MSSQL = "MSSQL"
 
 
 class OPTION_TYPE:
