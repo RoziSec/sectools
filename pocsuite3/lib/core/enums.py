@@ -137,6 +137,7 @@ class POC_CATEGORY:
     PROTOCOL.REDIS = "Redis"
     PROTOCOL.MYSQL = "Mysql"
     PROTOCOL.MSSQL = "MSSQL"
+    PROTOCOL.MEMCACHE = "MemCache"
 
 
 class OPTION_TYPE:
