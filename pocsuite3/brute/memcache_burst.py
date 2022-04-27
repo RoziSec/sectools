@@ -10,7 +10,7 @@ import itertools
 import queue
 
 from pocsuite3.api import POCBase, Output, register_poc, POC_CATEGORY, VUL_TYPE
-from pocsuite3.lib.core.data import paths
+from pocsuite3.lib.core.data import paths, logger
 
 task_queue = queue.Queue()
 result_queue = queue.Queue()
@@ -92,6 +92,7 @@ def unauthorized_access(host, port):
 
 def memcache_burst(host, port):
     if not port_check(host, port):
+        logger.warning("{}:{} is unreachable".format(host, port))
         return
 
     if unauthorized_access(host, port):

@@ -118,6 +118,7 @@ def task_thread():
 
 def ftp_burst(host, port):
     if not port_check(host, port):
+        logger.warning("{}:{} is unreachable".format(host, port))
         return
 
     if anonymous_login(host, port):

@@ -126,6 +126,7 @@ def task_thread():
 
 def telnet_burst(host, port):
     if not port_check(host, port):
+        logger.warning("{}:{} is unreachable".format(host, port))
         return
 
     try:

@@ -138,6 +138,7 @@ class POC_CATEGORY:
     PROTOCOL.MYSQL = "Mysql"
     PROTOCOL.MSSQL = "MSSQL"
     PROTOCOL.MEMCACHE = "MemCache"
+    PROTOCOL.MONGODB = "Mongodb"
 
 
 class OPTION_TYPE:

@@ -127,6 +127,7 @@ def task_thread():
 
 def redis_burst(host, port):
     if not port_check(host, port):
+        logger.warning("{}:{} is unreachable".format(host, port))
         return
 
     if unauthorized_access(host, port):
