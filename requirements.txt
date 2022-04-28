@@ -18,3 +18,4 @@ pymssql~=2.2.5
 redis~=4.2.2
 ldap3~=2.9.1
 python-memcached~=1.59
+pymongo~=4.1.1

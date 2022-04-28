@@ -284,12 +284,18 @@
 ## 🔥Function
 ### 漏洞扫描
 ![vulscan.png](img/vulscan.png)
+🤖 使用截图
 
 ### 端口扫描
 ![portscan.png](img/portscan.png)
+🤖 使用截图
 
 ### 弱口令攻击
 ![weakpass.png](img/weakpass.png)
+🤖 使用截图
 
 ### Github爬虫
+(网络问题会频繁报错，未加代理，等我学习完使用系统代理再修改代码)
 ![github.png](img/github.png)
+🤖 使用截图
+![spider.jpg](img/spider.jpg)
