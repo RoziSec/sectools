@@ -11,7 +11,6 @@ import urllib3
 from prettytable import PrettyTable
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-proxy = '127.0.0.1:7890'
 table = PrettyTable()
 
 table.field_names = ['\033[0;32mOptions\033[0m', '\033[0;32mHref\033[0m']
