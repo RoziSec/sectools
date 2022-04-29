@@ -245,9 +245,8 @@
 🤖 使用截图
 
 ### 端口扫描
-![portscan.png](img/portscan.png)
 🤖 使用截图
-![port_scan.png](img/port_scan.png)
+![portscan.png](img/portscan.png)
 
 ### 弱口令攻击
 (目前差postgresql、vnc、ldap，别问为什么没写，问就是不会)
@@ -257,7 +256,6 @@
 
 ### Github爬虫
 (网络问题会频繁报错，未加代理，等我学习完使用系统代理再修改代码)
-![github.png](img/github.png)
 🤖 使用截图
 ![spider.jpg](img/spider.jpg)
 ![spider_2.jpg](img/spider_2.jpg)
