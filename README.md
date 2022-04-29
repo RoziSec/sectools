@@ -13,49 +13,6 @@
 │   ├── passwdscan.py
 │   ├── portscan.py
 │   └── vulscan.py
-├── .git
-│   ├── branches
-│   ├── config
-│   ├── description
-│   ├── HEAD
-│   ├── hooks
-│   │   ├── applypatch-msg.sample
-│   │   ├── commit-msg.sample
-│   │   ├── fsmonitor-watchman.sample
-│   │   ├── post-update.sample
-│   │   ├── pre-applypatch.sample
-│   │   ├── pre-commit.sample
-│   │   ├── pre-merge-commit.sample
-│   │   ├── prepare-commit-msg.sample
-│   │   ├── pre-push.sample
-│   │   ├── pre-rebase.sample
-│   │   ├── pre-receive.sample
-│   │   ├── push-to-checkout.sample
-│   │   └── update.sample
-│   ├── index
-│   ├── info
-│   │   └── exclude
-│   ├── logs
-│   │   ├── HEAD
-│   │   └── refs
-│   │       ├── heads
-│   │       │   └── master
-│   │       └── remotes
-│   │           └── origin
-│   │               └── HEAD
-│   ├── objects
-│   │   ├── info
-│   │   └── pack
-│   │       ├── pack-e050cf1576e01ef3ddea841e8d90b788e1484989.idx
-│   │       └── pack-e050cf1576e01ef3ddea841e8d90b788e1484989.pack
-│   ├── packed-refs
-│   └── refs
-│       ├── heads
-│       │   └── master
-│       ├── remotes
-│       │   └── origin
-│       │       └── HEAD
-│       └── tags
 ├── Github
 │   └── monitor.py
 ├── img
