@@ -283,16 +283,20 @@
 
 ## 🔥Function
 ### 漏洞扫描
+(漏洞扫描暂时未开始写，没空，也没POC让我白嫖)
 ![vulscan.png](img/vulscan.png)
 🤖 使用截图
 
 ### 端口扫描
 ![portscan.png](img/portscan.png)
 🤖 使用截图
+![port_scan.png](img/port_scan.png)
 
 ### 弱口令攻击
+(目前差postgresql、vnc、ldap，别问为什么没写，问就是不会)
 ![weakpass.png](img/weakpass.png)
 🤖 使用截图
+![redis_scan.png](img/redis_scan.png)
 
 ### Github爬虫
 (网络问题会频繁报错，未加代理，等我学习完使用系统代理再修改代码)
