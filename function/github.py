@@ -56,7 +56,7 @@ class GitHub:
                     begin()
 
                 else:
-                    print('\033[0;31m[-] Error: Invalid Brute Type!Please Retype It!\033[0m')
+                    print('\033[0;31m[-] Error: Invalid Spider Type!Please Retype It!\033[0m')
 
             except KeyboardInterrupt:
                 print('')

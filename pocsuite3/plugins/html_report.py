@@ -142,7 +142,7 @@ class HtmlExport:
             'Bug report': 'https://github.com/knownsec/pocsuite3/issues',
         }
         self._write_header()
-        self._write_navbar(name='Pocsuite3', menus=menus)
+        self._write_navbar(name='Norah C.IV', menus=menus)
         self.html.main(role_="main", class_='container')
         self.write_results(results)
         self.html.main.close()
@@ -164,10 +164,11 @@ class HtmlReport(PluginBase):
         logger.debug(debug_msg)
 
     def start(self):
+        root_path = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
         # TODO
         # Generate html report
         filename = "pocsuite_{0}.html".format(time.strftime("%Y%m%d_%H%M%S"))
-        filename = os.path.join(paths.POCSUITE_OUTPUT_PATH, filename)
+        filename = os.path.join(root_path + '/result/', filename)
         if conf.url:
             title = "Report of {0}".format(repr(conf.url))
         elif conf.dork:
