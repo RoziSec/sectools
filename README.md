@@ -240,9 +240,10 @@
 
 ## 🔥Function
 ### 漏洞扫描
-(漏洞扫描暂时未开始写，没空，也没POC让我白嫖)
 ![vulscan.png](img/vulscan.png)
 🤖 使用截图
+![vulscan_1.png](img/vulscan_1.png)
+![vulscan_2.png](img/vulscan_2.png)
 
 ### 端口扫描
 🤖 使用截图
