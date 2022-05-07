@@ -139,6 +139,7 @@ class POC_CATEGORY:
     PROTOCOL.MSSQL = "MSSQL"
     PROTOCOL.MEMCACHE = "MemCache"
     PROTOCOL.MONGODB = "Mongodb"
+    PROTOCOL.ZOOKEEPER = "Zookeeper"
 
 
 class OPTION_TYPE:
