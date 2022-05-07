@@ -7,17 +7,8 @@
 import sys
 
 from main import begin
-from prettytable import PrettyTable
+from begin.format_table import TableFormat
 from Github.monitor import Monitor
-
-table = PrettyTable()
-
-table.field_names = ['\033[0;32mOptions\033[0m', '\033[0;32mDescription\033[0m']
-table.add_row(['1', '\033[0;33mRepositories\033[0m'])
-table.add_row(['2', '\033[0;33mCommits\033[0m'])
-table.add_row(['3', '\033[0;33mIssues\033[0m'])
-table.add_row(['4', '\033[0;33mWikis\033[0m'])
-table.add_row(['0', '\033[0;33mGo Back\033[0m'])
 
 
 def keywords_input():
@@ -30,7 +21,7 @@ def keywords_input():
 class GitHub:
     @staticmethod
     def scan():
-        print(table)
+        print(TableFormat().github_format())
         print('\033[0;31m[+] 部分链接过长导致界面不美观，建议全屏运行\033[0m')
         while True:
             try:

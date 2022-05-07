@@ -7,22 +7,14 @@
 import sys
 
 from main import begin
-from prettytable import PrettyTable
+from begin.format_table import TableFormat
 from port.scan import Nmap
-
-table = PrettyTable()
-
-table.field_names = ['\033[0;32mOptions\033[0m', '\033[0;32mDescription\033[0m', '\033[0;32mNotes\033[0m']
-table.add_row(['1', '\033[0;33mSimplify\033[0m', '\033[0;31m精简端口扫描\033[0m'])
-table.add_row(['2', '\033[0;33mGeneral\033[0m', '\033[0;31m常规端口扫描\033[0m'])
-table.add_row(['3', '\033[0;33mAll\033[0m', '\033[0;31m全端口扫描\033[0m'])
-table.add_row(['0', '\033[0;33mGo Back\033[0m', '\033[0;31m\033[0m'])
 
 
 class Portscan:
     @staticmethod
     def scan():
-        print(table)
+        print(TableFormat().port_format()[0])
         while True:
             try:
                 portscan_choices = input('\033[0;32mNorah C.IV\033[0m > ')

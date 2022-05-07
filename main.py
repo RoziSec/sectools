@@ -8,21 +8,12 @@ import os
 import platform
 
 from begin import start
-from prettytable import PrettyTable
-
-table = PrettyTable()
-
-table.field_names = ['\033[0;32mOptions\033[0m', '\033[0;32mContents\033[0m', '\033[0;32mChinese Name\033[0m']
-table.add_row(['1', '\033[0;33mVulnerability Detection\033[0m', '\033[0;31m漏洞扫描\033[0m'])
-table.add_row(['2', '\033[0;33mNmap Port Scan\033[0m', '\033[0;31mNmap端口扫描\033[0m'])
-table.add_row(['3', '\033[0;33mWeak Password Attack\033[0m', '\033[0;31m弱口令攻击\033[0m'])
-table.add_row(['4', '\033[0;33mGitHub Spider\033[0m', '\033[0;31mGitHub爬虫\033[0m'])
-table.add_row(['0', '\033[0;33mExit The Program\033[0m', '\033[0;31m退出程序\033[0m'])
+from begin.format_table import TableFormat
 
 
 def begin():
     try:
-        print(table)
+        print(TableFormat().main_format())
         print('\033[0;33m[*] Choose The Attack Module\033[0m')
         start.start().loop()
     except KeyboardInterrupt:

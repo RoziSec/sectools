@@ -8,8 +8,8 @@ import os
 import sys
 import platform
 
-from prettytable import PrettyTable
 from main import begin
+from begin.format_table import TableFormat
 
 root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os_platform = platform.platform()
@@ -17,28 +17,12 @@ if 'Windows' in os_platform:
     command = 'python '
 elif 'Linux' in os_platform:
     command = 'python3 '
-table = PrettyTable()
-
-table.field_names = ['\033[0;32mOptions\033[0m', '\033[0;32mContents\033[0m', '\033[0;32mDefault Port\033[0m',
-                     '\033[0;32mDirection of Attack\033[0m']
-table.add_row(['1', '\033[0;33mFTP\033[0m', '\033[0;33m21\033[0m', '\033[0;31m允许匿名的上传、下载、爆破和嗅探操作\033[0m'])
-table.add_row(['2', '\033[0;33mLdap\033[0m', '\033[0;33m389\033[0m', '\033[0;31m注入、允许匿名访问、弱口令\033[0m'])
-table.add_row(['3', '\033[0;33mMemCache\033[0m', '\033[0;33m11211\033[0m', '\033[0;31m未授权访问\033[0m'])
-table.add_row(['4', '\033[0;33mMongoDB\033[0m', '\033[0;33m27017\033[0m', '\033[0;31m爆破、未授权访问\033[0m'])
-table.add_row(['5', '\033[0;33mMssql\033[0m', '\033[0;33m1433\033[0m', '\033[0;31m注入、提权、SA弱口令、爆破\033[0m'])
-table.add_row(['6', '\033[0;33mMysql\033[0m', '\033[0;33m3306\033[0m', '\033[0;31m注入、提权、爆破\033[0m'])
-table.add_row(['7', '\033[0;33mPostgreSQL\033[0m', '\033[0;33m5432\033[0m', '\033[0;31m爆破、注入、弱口令\033[0m'])
-table.add_row(['8', '\033[0;33mRedis\033[0m', '\033[0;33m6379\033[0m', '\033[0;31m未授权访问、弱口令爆破\033[0m'])
-table.add_row(['9', '\033[0;33mSSH\033[0m', '\033[0;33m22\033[0m', '\033[0;31mSSH隧道及内网代理转发、文件传输\033[0m'])
-table.add_row(['10', '\033[0;33mTelnet\033[0m', '\033[0;33m23\033[0m', '\033[0;31m爆破、嗅探、弱口令\033[0m'])
-table.add_row(['11', '\033[0;33mVNC\033[0m', '\033[0;33m5900\033[0m', '\033[0;31m弱口令爆破\033[0m'])
-table.add_row(['0', '\033[0;33mGo Back\033[0m', '\033[0;33m\033[0m', '\033[0;31m\033[0m'])
 
 
 class WeakPassword:
     @staticmethod
     def scan():
-        print(table)
+        print(TableFormat().passwd_format())
         print('\033[0;33m[*] Choose The Brute Type\033[0m')
         while True:
             try:
