@@ -7,7 +7,7 @@
 import sys
 import os
 
-from begin.format_table import TableFormat
+from scan_start.format_table import TableFormat
 from main import begin
 
 

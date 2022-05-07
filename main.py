@@ -7,8 +7,8 @@
 import os
 import platform
 
-from begin import start
-from begin.format_table import TableFormat
+from scan_start import start
+from scan_start.format_table import TableFormat
 
 
 def begin():

@@ -6,7 +6,7 @@
 # @Software: PyCharm
 import nmap
 
-from begin.format_table import TableFormat
+from scan_start.format_table import TableFormat
 table = TableFormat().port_format()[1]
 
 

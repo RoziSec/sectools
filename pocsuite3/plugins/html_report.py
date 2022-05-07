@@ -163,7 +163,7 @@ class HtmlReport(PluginBase):
         # TODO
         # Generate html report
         filename = "sectools_{0}.html".format(time.strftime("%Y%m%d_%H%M%S"))
-        filename = os.path.join(root_path + '/result/', filename)
+        filename = os.path.join(root_path + '/scan_result/', filename)
         if conf.url:
             title = "SecTools Result"
         elif conf.dork:

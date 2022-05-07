@@ -7,8 +7,8 @@
 import sys
 
 from main import begin
-from begin.format_table import TableFormat
-from Github.monitor import Monitor
+from scan_start.format_table import TableFormat
+from scan_github.monitor import Monitor
 
 
 def keywords_input():

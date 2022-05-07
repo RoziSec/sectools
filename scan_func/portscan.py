@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @File : port.py
+# @File : scan_port.py
 # @Author : Norah C.IV
 # @Time : 2022/4/19 23:43
 # @Software: PyCharm
 import sys
 
 from main import begin
-from begin.format_table import TableFormat
-from port.scan import Nmap
+from scan_start.format_table import TableFormat
+from scan_port.scan import Nmap
 
 
 class Portscan:

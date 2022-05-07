@@ -8,7 +8,7 @@ import re
 import requests
 import urllib3
 
-from begin.format_table import TableFormat
+from scan_start.format_table import TableFormat
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 table = TableFormat().monitor_format()

@@ -8,10 +8,10 @@ import os
 import sys
 import platform
 
-from function.vulscan import Vulnerability
-from function.portscan import Portscan
-from function.passwdscan import WeakPassword
-from function.github import GitHub
+from scan_func.vulscan import Vulnerability
+from scan_func.portscan import Portscan
+from scan_func.passwdscan import WeakPassword
+from scan_func.github import GitHub
 from main import begin
 
 root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
