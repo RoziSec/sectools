@@ -6,23 +6,14 @@
 # @Software: PyCharm
 import sys
 import os
-import platform
 
 from begin.format_table import TableFormat
 from main import begin
 
-os_platform = platform.platform()
-root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-if 'Windows' in os_platform:
-    command = 'python '
-elif 'Linux' in os_platform:
-    command = 'python3 '
-
 
 class Vulnerability:
     @staticmethod
-    def scan():
+    def scan(command, root_path):
         print(TableFormat().vuln_format())
         while True:
             try:
@@ -31,12 +22,12 @@ class Vulnerability:
                     poc_name = input('\033[0;33m[+] Please enter poc name\033[0m：')
                     host = input('\033[0;33m[+] Please enter host\033[0m：')
                     port = input('\033[0;33m[+] Please enter port\033[0m：')
-                    os.system(command + root_path + "/pocsuite3/cli.py -u " + host + ':' + port + " -r " + root_path +
+                    os.system(command + "/pocsuite3/cli.py -u " + host + ':' + port + " -r " + root_path +
                               "/pocsuite3/pocs/" + poc_name + ".py --verify --plugins html_report")
 
                 elif vuln_choices == '2':
                     host = input('\033[0;33m[+] Please enter host\033[0m：')
-                    os.system(command + root_path + "/pocsuite3/cli.py -u " + host + " -r " + root_path +
+                    os.system(command + "/pocsuite3/cli.py -u " + host + " -r " + root_path +
                               "/pocsuite3/pocs/ --plugins html_report")
 
                 elif vuln_choices == '3':

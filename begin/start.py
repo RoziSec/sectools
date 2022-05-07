@@ -4,13 +4,22 @@
 # @Author : Norah C.IV
 # @Time : 2022/4/19 23:40
 # @Software: PyCharm
+import os
 import sys
+import platform
 
 from function.vulscan import Vulnerability
 from function.portscan import Portscan
 from function.passwdscan import WeakPassword
 from function.github import GitHub
 from main import begin
+
+root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+os_platform = platform.platform()
+if 'Windows' in os_platform:
+    command = 'python ' + root_path
+elif 'Linux' in os_platform:
+    command = 'python3 ' + root_path
 
 
 class start:
@@ -20,13 +29,13 @@ class start:
             try:
                 choose = input('\033[0;32mNorah C.IV\033[0m > ')
                 if choose == '1':
-                    Vulnerability.scan()
+                    Vulnerability.scan(command, root_path)
 
                 elif choose == '2':
                     Portscan.scan()
 
                 elif choose == '3':
-                    WeakPassword.scan()
+                    WeakPassword.scan(command, root_path)
 
                 elif choose == '4':
                     GitHub.scan()
