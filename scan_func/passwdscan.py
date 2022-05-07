@@ -22,67 +22,67 @@ class WeakPassword:
                 brute_choice = input('\033[0;32mNorah C.IV\033[0m > ')
                 if brute_choice == '1':
                     host = input('\033[0;33m[+] Please enter host\033[0m：')
-                    port = input('\033[0;33m[+] Please enter scan_port\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
                     os.system(command + "/pocsuite3/cli.py -u " + host + ':' + port + " -r " + root_path +
                               "/pocsuite3/brute/ftp_burst.py --verify")
 
                 elif brute_choice == '2':
                     host = input('\033[0;33m[+] Please enter host\033[0m：')
-                    port = input('\033[0;33m[+] Please enter scan_port\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
                     os.system(command + "/pocsuite3/cli.py -u " + host + ':' + port + " -r " + root_path +
                               "/pocsuite3/brute/ldap_burst.py --verify")
 
                 elif brute_choice == '3':
                     host = input('\033[0;33m[+] Please enter host\033[0m：')
-                    port = input('\033[0;33m[+] Please enter scan_port\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
                     os.system(command + "/pocsuite3/cli.py -u " + host + ':' + port + " -r " + root_path +
                               "/pocsuite3/brute/memcache_burst.py --verify")
 
                 elif brute_choice == '4':
                     host = input('\033[0;33m[+] Please enter host\033[0m：')
-                    port = input('\033[0;33m[+] Please enter scan_port\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
                     os.system(command + "/pocsuite3/cli.py -u " + host + ':' + port + " -r " + root_path +
                               "/pocsuite3/brute/mongodb_burst.py --verify")
 
                 elif brute_choice == '5':
                     host = input('\033[0;33m[+] Please enter host\033[0m：')
-                    port = input('\033[0;33m[+] Please enter scan_port\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
                     os.system(command + "/pocsuite3/cli.py -u " + host + ':' + port + " -r " + root_path +
                               "/pocsuite3/brute/mssql_burst.py --verify")
 
                 elif brute_choice == '6':
                     host = input('\033[0;33m[+] Please enter host\033[0m：')
-                    port = input('\033[0;33m[+] Please enter scan_port\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
                     os.system(command + "/pocsuite3/cli.py -u " + host + ':' + port + " -r " + root_path +
                               "/pocsuite3/brute/mysql_burst.py --verify")
 
                 elif brute_choice == '7':
                     host = input('\033[0;33m[+] Please enter host\033[0m：')
-                    port = input('\033[0;33m[+] Please enter scan_port\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
                     os.system(command + "/pocsuite3/cli.py -u " + host + ':' + port + " -r " + root_path +
                               "/pocsuite3/brute/postgresql_burst.py --verify")
 
                 elif brute_choice == '8':
                     host = input('\033[0;33m[+] Please enter host\033[0m：')
-                    port = input('\033[0;33m[+] Please enter scan_port\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
                     os.system(command + "/pocsuite3/cli.py -u " + host + ':' + port + " -r " + root_path +
                               "/pocsuite3/brute/redis_burst.py --verify")
 
                 elif brute_choice == '9':
                     host = input('\033[0;33m[+] Please enter host\033[0m：')
-                    port = input('\033[0;33m[+] Please enter scan_port\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
                     os.system(command + "/pocsuite3/cli.py -u " + host + ':' + port + " -r " + root_path +
                               "/pocsuite3/brute/ssh_burst.py --verify")
 
                 elif brute_choice == '10':
                     host = input('\033[0;33m[+] Please enter host\033[0m：')
-                    port = input('\033[0;33m[+] Please enter scan_port\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
                     os.system(command + "/pocsuite3/cli.py -u " + host + ':' + port + " -r " + root_path +
                               "/pocsuite3/brute/telnet_burst.py --verify")
 
                 elif brute_choice == '11':
                     host = input('\033[0;33m[+] Please enter host\033[0m：')
-                    port = input('\033[0;33m[+] Please enter scan_port\033[0m：')
+                    port = input('\033[0;33m[+] Please enter port\033[0m：')
                     os.system(command + "/pocsuite3/cli.py -u " + host + ':' + port + " -r " + root_path +
                               "/pocsuite3/brute/vnc_burst.py --verify")
 
