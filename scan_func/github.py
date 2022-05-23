@@ -25,7 +25,7 @@ class GitHub:
         print('\033[0;31m[+] 部分链接过长导致界面不美观，建议全屏运行\033[0m')
         while True:
             try:
-                github_choices = input('\033[0;32mNorah C.IV\033[0m > ')
+                github_choices = input('\033[0;32mNorah C.IV\033[0m (\033[0;31mGitHub爬虫\033[0m) > ')
 
                 if github_choices == '1':
                     keyword = keywords_input()

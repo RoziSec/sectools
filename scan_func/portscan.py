@@ -17,7 +17,7 @@ class Portscan:
         print(TableFormat().port_format()[0])
         while True:
             try:
-                portscan_choices = input('\033[0;32mNorah C.IV\033[0m > ')
+                portscan_choices = input('\033[0;32mNorah C.IV\033[0m (\033[0;31m端口扫描\033[0m) > ')
                 if portscan_choices == '1':
                     host = input('\033[0;33m[+] Please enter host\033[0m：')
                     Nmap().scan(host, 'sim')

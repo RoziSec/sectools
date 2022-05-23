@@ -17,7 +17,7 @@ class Vulnerability:
         print(TableFormat().vuln_format())
         while True:
             try:
-                vuln_choices = input('\033[0;32mNorah C.IV\033[0m > ')
+                vuln_choices = input('\033[0;32mNorah C.IV\033[0m (\033[0;31m漏洞扫描\033[0m) > ')
                 if vuln_choices == '1':
                     poc_name = input('\033[0;33m[+] Please enter poc name\033[0m：')
                     host = input('\033[0;33m[+] Please enter host\033[0m：')

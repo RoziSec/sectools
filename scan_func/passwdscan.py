@@ -19,7 +19,7 @@ class WeakPassword:
         print('\033[0;33m[*] Choose The Brute Type\033[0m')
         while True:
             try:
-                brute_choice = input('\033[0;32mNorah C.IV\033[0m > ')
+                brute_choice = input('\033[0;32mNorah C.IV\033[0m (\033[0;31m弱口令扫描\033[0m) > ')
                 if brute_choice == '1':
                     host = input('\033[0;33m[+] Please enter host\033[0m：')
                     port = input('\033[0;33m[+] Please enter port\033[0m：')
