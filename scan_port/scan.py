@@ -60,7 +60,7 @@ class Nmap:
         else:
             ports = self.all
 
-        start = nm.scan(hosts=target, arguments=' -T4 -A -v', ports=ports)
+        start = nm.scan(hosts=target, arguments=' -T4 -sS -Pn --open -v', ports=ports)
         for host, result in start['scan'].items():
             if result['status']['state'] == 'up':
                 ip = host
